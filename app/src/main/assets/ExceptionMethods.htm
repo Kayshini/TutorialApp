@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ts{
+   vertical-align:middle !important;
+   text-align:center !important;
+}
+.table {
+   border-collapse: collapse !important;
+   width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    color:DodgerBlue;
+}
+h2 {
+    font-family: "Times New Roman", Times, serif;
+    color:MediumSeaGreen;
+}
+h3 {
+    font-family: "Times New Roman", Times, serif;
+    color:MediumSeaGreen;
+}
+    </style>
+    <title>Exception Methods</title>
+</head>
+<body>
+<article class="amp-wp-article">
+    <header class="amp-wp-article-header">
+        <h1 class="amp-wp-title">Exceptions Methods</h1>
+    </header>
+
+<p>Java Exception and all of it's subclasses doesn't provide any specific methods and all of the methods are defined in the base class Throwable. The exception classes are created to specify different kind of exception scenarios so that we can easily identify the root cause and handle the exception according to it's type. Throwable class implements Serializable interface for interoperability.
+</p>
+<p>Following is the list of important methods available in the Throwable class.</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Sr.No.</th>
+        <th style="text-align:center;">Method &amp; Description</th>
+    </tr>
+    <tr>
+        <td class="ts">1</td>
+        <td><p><b>public String getMessage()</b></p>
+            <p>Returns a detailed message about the exception that has occurred. This message is initialized in the Throwable constructor.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="ts">2</td>
+        <td><p><b>public Throwable getCause()</b></p>
+            <p>Returns the cause of the exception as represented by a Throwable object.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="ts">3</td>
+        <td><p><b>public String toString()</b></p>
+            <p>Returns the name of the class concatenated with the result of getMessage().</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="ts">4</td>
+        <td><p><b>public void printStackTrace()</b></p>
+            <p>Prints the result of toString() along with the stack trace to System.err, the error output stream.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="ts">5</td>
+        <td><p><b>public StackTraceElement [] getStackTrace()</b></p>
+            <p>Returns an array containing each element on the stack trace. The element at index 0 represents the top of the call stack, and the last element in the array represents the method at the bottom of the call stack.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="ts">6</td>
+        <td><p><b>public Throwable fillInStackTrace()</b></p>
+            <p>Fills the stack trace of this Throwable object with the current stack trace, adding to any previous information in the stack trace.</p>
+        </td>
+    </tr>
+</table>
+</article>
+</body>
+</html>

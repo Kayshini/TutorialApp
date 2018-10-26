@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    color:DodgerBlue;
+}
+h3 {
+    font-family: "Times New Roman", Times, serif;
+    color:MediumSeaGreen;
+}
+</style>
+    <title>FAQs</title>
+</head>
+<article class="amp-wp-article">
+    <header class="amp-wp-article-header">
+        <h1 class="amp-wp-title">FAQs</h1>
+    </header>
+
+<h3><strong>Q1. What is an exception?</strong></h3>
+<p>An exception is an abnormal event that occurs during the execution of a program and disrupts the normal flow of the program&#8217;s instructions.</p>
+<h3><strong>Q2. What is the purpose of the <em>throw</em> and <em>throws</em> keywords?</strong></h3>
+<p>The <em>throws</em> keyword is used to specify that a method may raise an exception during its execution. It enforces explicit exception handling when calling a method:</p>
+<pre class="brush: java; gutter: true">public void simpleMethod() throws Exception {
+    // ...
+}</pre>
+<p>The <em>throw</em> keyword allows us to throw an exception object to interrupt the normal flow of the program. This is most commonly used when a program fails to satisfy a given condition:</p>
+<pre class="brush: java; gutter: true">if (task.isTooComplicated()) {
+    throw new TooComplicatedException(&quot;The task is too complicated&quot;);
+}</pre>
+<h3><strong>Q3. How can you handle an exception?</strong></h3>
+<p>By using a <em>try-catch-finally</em> statement:</p>
+<pre class="brush: java; gutter: true">try {
+    // ...
+} catch (ExceptionType1 ex) {
+    // ...
+} catch (ExceptionType2 ex) {
+    // ...
+} finally {
+    // ...
+}</pre>
+<p>The block of code in which an exception may occur is enclosed in a <em>try</em> block. This block is also called &#8220;protected&#8221; or &#8220;guarded&#8221; code.</p>
+<p>If an exception occurs, the <em>catch</em> block that matches the exception being thrown is executed, if not, all <em>catch</em> blocks are ignored.</p>
+<p>The <em>finally</em> block is always executed after the <em>try</em> block exits, whether an exception was thrown or not inside it.</p>
+<h3><strong>Q4. What is the difference between a checked and an unchecked exception?</strong></h3>
+<p>A checked exception must be handled within a <em>try-catch</em> block or declared in a <em>throws</em> clause; whereas an unchecked exception is not required to be handled nor declared.</p>
+<p>Checked and unchecked exceptions are also known as compile-time and runtime exceptions respectively.</p>
+<p>All exceptions are checked exceptions, except those indicated by <em>Error</em>, <em>RuntimeException</em>, and their subclasses.</p>
+<h3><strong>Q5. What is the difference between an exception and error?</strong></h3>
+<p>An exception is an event that represents a condition from which is possible to recover, whereas error represents an external situation usually impossible to recover from.</p>
+<p>All errors thrown by the JVM are instances of <em>Error</em> or one of its subclasses, the more common ones include but are not limited to:</p>
+<ul>
+    <li><em>OutOfMemoryError</em> – thrown when the JVM cannot allocate more objects because it is out memory, and the garbage collector was unable to make more available</li>
+    <li><em>StackOverflowError</em> – occurs when the stack space for a thread has run out, typically because an application recurses too deeply</li>
+    <li><em>ExceptionInInitializerError</em> – signals that an unexpected exception occurred during the evaluation of a static initializer</li>
+    <li><em>NoClassDefFoundError</em> – is thrown when the classloader tries to load the definition of a class and couldn&#8217;t find it, usually because the required <em>class</em> files were not found in the classpath</li>
+    <li><em>UnsupportedClassVersionError</em> – occurs when the JVM attempts to read a <em>class</em> file and determines that the version in the file is not supported, normally because the file was generated with a newer version of Java</li>
+</ul>
+<p>Although an error can be handled with a <em>try</em> statement, this is not a recommended practice since there is no guarantee that the program will be able to do anything reliably after the error was thrown.</p>
+<h3><strong>Q6. What exception will be thrown executing the following code block?</strong></h3>
+<pre class="brush: java; gutter: true">Integer[][] ints = { { 1, 2, 3 }, { null }, { 7, 8, 9 } };
+System.out.println(&quot;value = &quot; + ints[1][1].intValue());</pre>
+<p>It throws an <em>ArrayIndexOutOfBoundsException </em>since we&#8217;re trying to access a position greater than the length of the array.</p>
+<h3><strong>Q7. What is exception chaining?</strong></h3>
+<p>Occurs when an exception is thrown in response to another exception. This allows us to discover the complete history of our raised problem:</p>
+<pre class="brush: java; gutter: true">try {
+    task.readConfigFile();
+} catch (FileNotFoundException ex) {
+    throw new TaskException(&quot;Could not perform task&quot;, ex);
+}</pre>
+<h3><strong>Q8. What is a stacktrace and how does it relate to an exception?</strong></h3>
+<p>A stack trace provides the names of the classes and methods that were called, from the start of the application to the point an exception occurred.</p>
+<p>It&#8217;s a very useful debugging tool since it enables us to determine exactly where the exception was thrown in the application and the original causes that led to it.</p>
+<h3><strong>Q9. Why would you want to subclass an exception?</strong></h3>
+<p>If the exception type isn&#8217;t represented by those that already exist in the Java platform, or if you need to provide more information to client code to treat it in a more precise manner, then you should create a custom exception.</p>
+<p>Deciding whether a custom exception should be checked or unchecked depends entirely on the business case. However, as a rule of thumb; if the code using your exception can be expected to recover from it, then create a checked exception otherwise make it unchecked.</p>
+<p>Also, you should inherit from the most specific <em>Exception</em> subclass that closely relates to the one you want to throw. If there is no such class, then choose <em>Exception </em>as the parent.</p>
+<h3><strong>Q10. What are some advantages of exceptions?</strong></h3>
+<p>Traditional error detection and handling techniques often lead to spaghetti code hard to maintain and difficult to read. However, exceptions enable us to separate the core logic of our application from the details of what to do when something unexpected happens.</p>
+<p>Also, since the JVM searches backward through the call stack to find any methods interested in handling a particular exception; we gain the ability to propagate an error up in the call stack without writing additional code.</p>
+<p>Also, because all exceptions thrown in a program are objects, they can be grouped or categorized based on its class hierarchy. This allows us to catch a group exceptions in a single exception handler by specifying the exception&#8217;s superclass in the <em>catch</em> block.</p>
+<h3><strong>Q11. Will the following code compile?</strong></h3>
+<pre class="brush: java; gutter: true">void doSomething() {
+    // ...
+    throw new RuntimeException(new Exception(&quot;Chained Exception&quot;));
+}</pre>
+<p>Yes. When chaining exceptions, the compiler only cares about the first one in the chain and, because it detects an unchecked exception, we don&#8217;t need to add a throws clause.</p>
+<h3><strong>Q12. Is there any way of throwing a checked exception from a method that does not have a <em>throws</em> clause?</strong></h3>
+<p>Yes. We can take advantage of the type erasure performed by the compiler and make it think we are throwing an unchecked exception, when, in fact; we&#8217;re throwing a checked exception:</p>
+<pre class="brush: java; gutter: true">public &lt;T extends Throwable&gt; T sneakyThrow(Throwable ex) throws T {
+    throw (T) ex;
+}
+
+public void methodWithoutThrows() {
+    this.&lt;RuntimeException&gt;sneakyThrow(new Exception(&quot;Checked Exception&quot;));
+}</pre>
+</article>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types of Exception in Java with Examples</title>
+    <style>
+        .alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    color:DodgerBlue;
+}
+h2 {
+    font-family: "Times New Roman", Times, serif;
+    color:MediumSeaGreen;
+}
+h3 {
+    font-family: "Times New Roman", Times, serif;
+    color:MediumSeaGreen;
+}
+    </style>
+</head>
+<body class="">
+
+
+<article class="amp-wp-article">
+    <header class="amp-wp-article-header">
+        <h1 class="amp-wp-title">Types of Exception in Java with Examples</h1>
+    </header>
+
+
+    <div class="amp-wp-article-content">
+        <div></div><p>Java defines several types of exceptions that relate to its various class libraries. Java also allows users to define their own exceptions. <figure class="aligncenter amp-wp-inline-74d38e8ecd533a91935c8220dff9f88d">
+        <img class="amp-wp-enforced-sizes" src="https://www.geeksforgeeks.org/wp-content/uploads/Exceptions-in-Java.png" alt="exceptions-in-java" layout="intrinsic"></figure></p><p align="center"></p><p>Built-in exceptions are the exceptions which are available in Java libraries. These exceptions are suitable to explain certain error situations. Below is the list of important built-in exceptions in Java.</p><ol>
+        <li>
+            <strong>Arithmetic Exception</strong><br>
+            It is thrown when an exceptional condition has occurred in an arithmetic operation.</li>
+        <li>
+            <strong>ArrayIndexOutOfBoundException<br></strong>It is thrown to indicate that an array has been accessed with an illegal index. The index is either negative or greater than or equal to the size of the array.</li>
+        <li>
+            <strong>ClassNotFoundException<br></strong>This Exception is raised when we try to access a class whose definition is not found</li>
+        <li>
+            <strong>FileNotFoundException<br></strong>This Exception is raised when a file is not accessible or does not open.</li>
+        <li>
+            <strong>IOException<br></strong>It is thrown when an input-output operation failed or interrupted</li>
+        <li>
+            <strong>InterruptedException<br></strong>It is thrown when a thread is waiting , sleeping , or doing some processing , and it is interrupted.</li>
+        <li>
+            <strong>NoSuchFieldException<br></strong>It is thrown when a class does not contain the field (or variable) specified</li>
+        <li>
+            <strong>NoSuchMethodException<br></strong>It is thrown when accessing a method which is not found.</li>
+        <li>
+            <strong>NullPointerException<br></strong>This exception is raised when referring to the members of a null object. Null represents nothing</li>
+        <li>
+            <strong>NumberFormatException<br></strong>This exception is raised when a method could not convert a string into a numeric format.</li>
+        <li>
+            <strong>RuntimeException<br></strong>This represents any exception which occurs during runtime.</li>
+        <li>
+            <strong>StringIndexOutOfBoundsException<br></strong>It is thrown by String class methods to indicate that an index is either negative than the size of the string</li>
+    </ol>
+        <p align="center"><strong>Examples of Built-in Exception:</strong></p>
+            <strong>Arithmetic exception</strong>
+            <div id="highlighter_142475" class="syntaxhighlighter nogutter  ">
+                <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+                    <td class="code">
+                        <div class="container">
+                            <div class="line number1 index0 alt2"><code class="comments">// Java program to demonstrate ArithmeticException </code></div>
+                            <div class="line number2 index1 alt1">
+                                <code class="keyword">class</code> <code class="plain">ArithmeticException_Demo </code>
+                            </div>
+                            <div class="line number3 index2 alt2"><code class="plain">{ </code></div>
+                            <div class="line number4 index3 alt1">
+                                <code class="undefined spaces">    </code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[]) </code>
+                            </div>
+                            <div class="line number5 index4 alt2">
+                                <code class="undefined spaces">    </code><code class="plain">{ </code>
+                            </div>
+                            <div class="line number6 index5 alt1">
+                                <code class="undefined spaces">        </code><code class="keyword">try</code> <code class="plain">{ </code>
+                            </div>
+                            <div class="line number7 index6 alt2">
+                                <code class="undefined spaces">            </code><code class="keyword">int</code> <code class="plain">a = </code><code class="value">30</code><code class="plain">, b = </code><code class="value">0</code><code class="plain">; </code>
+                            </div>
+                            <div class="line number8 index7 alt1">
+                                <code class="undefined spaces">            </code><code class="keyword">int</code> <code class="plain">c = a/b;  </code><code class="comments">// cannot divide by zero </code>
+                            </div>
+                            <div class="line number9 index8 alt2">
+                                <code class="undefined spaces">            </code><code class="plain">System.out.println (</code><code class="string">"Result = "</code> <code class="plain">+ c); </code>
+                            </div>
+                            <div class="line number10 index9 alt1">
+                                <code class="undefined spaces">        </code><code class="plain">} </code>
+                            </div>
+                            <div class="line number11 index10 alt2">
+                                <code class="undefined spaces">        </code><code class="keyword">catch</code><code class="plain">(ArithmeticException e) { </code>
+                            </div>
+                            <div class="line number12 index11 alt1">
+                                <code class="undefined spaces">            </code><code class="plain">System.out.println (</code><code class="string">"Can't divide a number by 0"</code><code class="plain">); </code>
+                            </div>
+                            <div class="line number13 index12 alt2">
+                                <code class="undefined spaces">        </code><code class="plain">} </code>
+                            </div>
+                            <div class="line number14 index13 alt1">
+                                <code class="undefined spaces">    </code><code class="plain">} </code>
+                            </div>
+                            <div class="line number15 index14 alt2"><code class="plain">} </code></div>
+                        </div>
+                    </td>
+                </tr></tbody></table>
+                
+            </div>
+            <p><strong>Output:<br></strong></p>
+            <pre>Can't divide a number by 0
+</pre>
+    </ul>
+        <p align="center"><strong>User-Defined Exceptions</strong></p><p>Sometimes, the built-in exceptions in Java are not able to describe a certain situation. In such cases, user can also create exceptions which are called ‘user-defined Exceptions’.<br>
+        Following steps are followed for the creation of user-defined Exception.</p><ul>
+        <li>The user should create an exception class as a subclass of Exception class. Since all the exceptions are subclasses of Exception class, the user should also make his class a subclass of it. This is done as:
+            <pre>class MyException extends Exception</pre>
+        </li>
+        <li>We can write a default constructor in his own exception class.
+            <pre>MyException(){}</pre>
+        </li>
+        <li>We can also create a parameterized constructor with a string as a parameter.<br>
+            We can use this to store exception details. We can call super class(Exception) constructor from this and send the string there.
+            <pre>MyException(String str)
+{
+   super(str);
+}
+</pre>
+        </li>
+        <li>To raise exception of user-defined type, we need to create an object to his exception class and throw it using throw clause, as:
+            <pre>MyException me = new MyException(“Exception details”);
+throw me;</pre>
+        </li>
+    </ul>
+    </div>
+</article>
+</body>
+</html>

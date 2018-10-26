@@ -1,0 +1,107 @@
+[
+    {
+        "question_image_path":"question1",
+        "options":[
+            "A. The code writes “13” to the standard output",
+            "B. The code writes “16” to the standard output",
+            "C. The code writes “18” to the standard output",
+            "D. The code writes “24” to the standard output"
+        ],
+        "answer":"A",
+        "explanation": "The first call to method causes divide by zero and catch by Arithmetic exception and passes to the finally block. The second call to method causes NumberFormatException and catch by Runtime exception and passes to the finally block"
+    },
+    {
+        "question_image_path":"question2",
+        "options":[
+            "A. Compiler error",
+            "B. Complies and runs fine",
+            "C. Complies fine but throws ArithmeticException exception"
+        ],
+        "answer":"C",
+        "explanation": "Arithmetic Exception is unchecked exception, i.e. not checked by the complier. So the program complies fine."
+    },
+    {
+        "question":"Which of these is a super class of all errors and exceptions in Java language?",
+        "options":[
+            "A. RunTimeExeceptions",
+            "B. Throwable",
+            "C. Catchable",
+            "D. None of them above"
+        ],
+        "answer":"B",
+        "explanation": "The Throwable class is the superclass of all errors and exceptions in the Java language. Only objects that are instances of this class (or one of its subclasses) are thrown by the Java Virtual Machine or can be thrown by the Java throw statement. Similarly, only this class or one of its subclasses can be the argument type in a catch clause. For the purposes of compile-time checking of exceptions, Throwable and any subclass of Throwable that is not also a subclass of either RuntimeException or Error are regarded as checked exceptions."
+    },
+    {
+        "question":"The build-in base class in Java, which is used to handle all exceptions is:",
+        "options":[
+            "A. Raise",
+            "B. Exception",
+            "C. Error",
+            "D. Throwable"
+        ],
+        "answer":"D",
+        "explanation": "Since Throwable is the super class of all exceptions and errors, it is also the built-in-base class"
+    },
+    {
+        "question_image_path":"question5",
+        "options":[
+            "A. Caught base class exception",
+            "B. Caught derived class exception",
+            "C. Complier error because derived is not throwable",
+            "D. Complier error because base class exception is caught before derived class"
+        ],
+        "answer":"D",
+        "explanation": "Catching a base class exception before derived is not allowed by the compiler"
+    },
+    {
+        "question_image_path":"question6",
+        "options":[
+            "A. Got the Test Exception Inside finally block",
+            "B. Got the Test Exception",
+            "C. Inside finally block",
+            "D. Complier error"
+        ],
+        "answer":"A",
+        "explanation": "In Java, the finally is always executed after the try-catch block. This block can be used to do the common clean-up work"
+    },
+    {
+        "question":"Can we define our own exception?",
+        "options":[
+            "A. Yes",
+            "B. No"
+        ],
+        "answer":"A",
+        "explanation": "User-defined exceptions can be implemented and used for both checked and unchecked exceptions"
+    },
+    {
+        "question":"Does each exception which can be thrown by a method need to be declared with throws?",
+        "options":[
+            "A. Yes",
+            "B. No"
+        ],
+        "answer":"B",
+        "explanation": "Only the checked exception need to be declared with throws keyword"
+    },
+    {
+        "question":"Which of the following is a checked exception?",
+        "options":[
+            "A. Exception",
+            "B. ArithmeticException",
+            "C. NullPointerException",
+            "D. NumberFormatException "
+        ],
+        "answer":"A",
+        "explanation": "Arithmetic, Nullpointer and NumberFormat exception can happen based on the input at runtime, so they cannot be checked"
+    },
+    {
+        "question":"Exception and Error are direct subclass of",
+        "options":[
+            "A. BaseException",
+            "B. Throwable",
+            "C. Object",
+            "D. RuntimeException "
+        ],
+        "answer":"B",
+        "explanation": "Throwable is the super class of error and exceptions"
+    }
+]
